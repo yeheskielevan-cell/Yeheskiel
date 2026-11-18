@@ -1,0 +1,922 @@
+==+-<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKBP Bandar Buntu - Huria Kristen Batak Protestan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hkbp: {
+                            navy: '#0f2b5c',
+                            navydark: '#0a1d40',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                            accent: '#1e40af'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 antialiased selection:bg-hkbp-gold selection:text-hkbp-navy">
+
+    <!-- Top Info Bar -->
+    <div class="bg-hkbp-navydark text-gray-300 text-xs py-2 px-4 border-b border-hkbp-gold/20 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fas fa-church text-hkbp-gold mr-2"></i>Distrik V SUMATERA - TIMUR</span>
+                <span><i class="fas fa-map-marker-alt text-hkbp-gold mr-2"></i>Jl. Gereja Bandar Buntu, Peragangan</span>
+                <span><i class="fas fa-phone-alt text-hkbp-gold mr-2"></i>(0813-7060-0815)</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-hkbp-gold font-semibold">Tahun Kesehatian HKBP 2026</span>
+                <div class="flex space-x-2 border-l border-gray-600 pl-4">
+                    <a href="#" class="hover:text-hkbp-gold transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-hkbp-gold transition"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="hover:text-hkbp-gold transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-hkbp-navy text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Brand -->
+                <a href="#beranda" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full bg-white p-1.5 flex items-center justify-center shadow-md border-2 border-hkbp-gold group-hover:scale-105 transition-transform">
+                        <!-- HKBP Logo SVG -->
+                        <svg viewBox="0 0 100 100" class="w-full h-full">
+                            <circle cx="50" cy="50" r="48" fill="#0f2b5c" stroke="#d4af37" stroke-width="3"/>
+                            <!-- Cross -->
+                            <rect x="45" y="15" width="10" height="60" fill="#ffffff" />
+                            <rect x="25" y="30" width="50" height="10" fill="#ffffff" />
+                            <path d="M 50 15 L 45 35 L 55 35 Z" fill="#d4af37"/>
+                            <text x="50" y="88" font-family="Arial" font-weight="bold" font-size="14" fill="#ffffff" text-anchor="middle">HKBP</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block text-xl font-bold tracking-tight text-white font-serif">HKBP BANDAR BUNTU</span>
+                        <span class="block text-xs text-hkbp-gold tracking-widest uppercase font-medium">Huria Kristen Batak Protestan</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-1 font-medium text-sm">
+                    <a href="#beranda" class="px-3 py-2 rounded-md text-white hover:text-hkbp-gold hover:bg-hkbp-navydark transition">Beranda</a>
+                    <a href="#profil" class="px-3 py-2 rounded-md text-gray-200 hover:text-hkbp-gold hover:bg-hkbp-navydark transition">Profil</a>
+                    <a href="#pimpinan" class="px-3 py-2 rounded-md text-gray-200 hover:text-hkbp-gold hover:bg-hkbp-navydark transition">Pimpinan</a>
+                    <a href="#struktur" class="px-3 py-2 rounded-md text-gray-200 hover:text-hkbp-gold hover:bg-hkbp-navydark transition">Struktur</a>
+                    <a href="#jemaat" class="px-3 py-2 rounded-md text-gray-200 hover:text-hkbp-gold hover:bg-hkbp-navydark transition">Data Jemaat</a>
+                    <a href="#layanan" class="px-3 py-2 rounded-md text-gray-200 hover:text-hkbp-gold hover:bg-hkbp-navydark transition">Pelaporan & Layanan</a>
+                    <a href="#kontak" class="ml-2 px-4 py-2 rounded-full bg-hkbp-gold text-hkbp-navy font-semibold hover:bg-yellow-400 transition shadow-md">Kontak</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-gray-300 hover:text-white hover:bg-hkbp-navydark focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-hkbp-navydark border-t border-hkbp-gold/20 px-4 pt-2 pb-6 space-y-2">
+            <a href="#beranda" class="mobile-link block px-3 py-2 rounded-md text-base text-white hover:bg-hkbp-navy">Beranda</a>
+            <a href="#profil" class="mobile-link block px-3 py-2 rounded-md text-base text-gray-300 hover:bg-hkbp-navy">Profil Gereja</a>
+            <a href="#pimpinan" class="mobile-link block px-3 py-2 rounded-md text-base text-gray-300 hover:bg-hkbp-navy">Pimpinan Tahbisan</a>
+            <a href="#struktur" class="mobile-link block px-3 py-2 rounded-md text-base text-gray-300 hover:bg-hkbp-navy">Struktur Organisasi</a>
+            <a href="#jemaat" class="mobile-link block px-3 py-2 rounded-md text-base text-gray-300 hover:bg-hkbp-navy">Data Jemaat</a>
+            <a href="#layanan" class="mobile-link block px-3 py-2 rounded-md text-base text-gray-300 hover:bg-hkbp-navy">Pelaporan & Layanan</a>
+            <a href="#kontak" class="mobile-link block px-3 py-2 rounded-md text-base text-hkbp-gold font-semibold hover:bg-hkbp-navy">Kontak & Lokasi</a>
+        </div>
+    </header>
+
+    <!-- SECTION 1: BERANDA (HERO & ANNOUNCEMENTS) -->
+    <section id="beranda" class="relative">
+        <!-- Hero Banner -->
+        <div class="relative bg-hkbp-navy text-white overflow-hidden py-24 lg:py-32">
+            <div class="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <span class="inline-block px-3 py-1 rounded-full bg-hkbp-gold/20 text-hkbp-gold border border-hkbp-gold/40 text-xs font-semibold tracking-wider uppercase">
+                            Selamat Datang di HKBP Bandar Buntu Ressort Bandar Maratur
+                        </span>
+                        <h1 class="text-3xl sm:text-5xl font-bold font-serif leading-tight text-white">
+                            Soli Deo Gloria <br>
+                            <span class="text-hkbp-gold font-sans text-2xl sm:text-4xl">"Kemuliaan Hanya Bagi Allah"</span>
+                        </h1>
+                        <p class="text-gray-300 text-base sm:text-lg max-w-2xl font-light">
+                            Menjadi gereja yang inklusif, dialogis, dan transformatif dalam memperlihatkan kasih Kristus bagi seluruh jemaat dan masyarakat.
+                        </p>
+                        
+                        <!-- Verse Card -->
+                        <div class="p-4 sm:p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 shadow-inner max-w-xl mx-auto lg:mx-0">
+                            <p class="text-sm sm:text-base italic font-serif text-yellow-100">
+                                "J Jahowa do кай-ku, ndang hurangan au. Padao-dao do au dipatagak Dibahen do au peak di jampa na mual na tio."
+                            </p>
+                            <p class="text-xs sm:text-sm font-semibold text-hkbp-gold mt-2">
+                                — Mazmur 23 : 1-2 (Salmo 23)
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                            <a href="#jadwal" class="px-6 py-3 rounded-full bg-hkbp-gold text-hkbp-navy font-bold hover:bg-yellow-400 transition shadow-lg text-center">
+                                <i class="fas fa-calendar-alt mr-2"></i>Jadwal Ibadah
+                            </a>
+                            <a href="#layanan" class="px-6 py-3 rounded-full bg-transparent border-2 border-white text-white font-semibold hover:bg-white/10 transition text-center">
+                                <i class="fas fa-file-alt mr-2"></i>Layanan Jemaat
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual Card -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-2xl p-6 text-gray-800 shadow-2xl border-4 border-hkbp-gold/50 relative">
+                            <div class="absolute -top-4 -right-4 bg-hkbp-gold text-hkbp-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                                Live Stream
+                            </div>
+                            <h3 class="text-xl font-bold text-hkbp-navy font-serif mb-4 flex items-center">
+                                <i class="fas fa-video text-red-600 mr-2 animate-pulse"></i> Ibadah Minggu Ini
+                            </h3>
+                            <div class="aspect-video bg-gray-900 rounded-lg flex flex-col items-center justify-center text-white p-4 relative overflow-hidden group mb-4">
+                                <img src="https://images.unsplash.com/photo-1548625361-180a9d8021c3?auto=format&fit=crop&w=800&q=80" alt="Ibadah Gereja" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/0f2b5c/ffffff?text=Ibadah+HKBP'">
+                                <div class="relative z-10 text-center">
+                                    <i class="fas fa-play-circle text-5xl text-hkbp-gold mb-2 cursor-pointer hover:scale-110 transition"></i>
+                                    <p class="font-bold text-sm">Minggu XXI Set. Trinitatis</p>
+                                    <span class="text-xs text-gray-300">Pukul 08.00 WIB (Batam/Batak) & 10.00 WIB (Bahasa Indonesia)</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2 text-xs text-gray-600">
+                                <div class="flex justify-between py-1 border-b">
+                                    <span>Pengkhotbah:</span>
+                                    <span class="font-semibold text-hkbp-navy">Biv.Desven Br.Panjaitan</span>
+                                </div>
+                                <div class="flex justify-between py-1 border-b">
+                                    <span>Liturgis:</span>
+                                    <span class="font-semibold text-hkbp-navy">St. R. Hutahaean</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Jadwal Ibadah Minggu & Pelayanan -->
+        <div id="jadwal" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-hkbp-gold mb-1">Persekutuan & Ibadah</h2>
+                    <p class="text-3xl font-bold font-serif text-hkbp-navy">Jadwal Ibadah & Pelayanan Kategori</p>
+                    <div class="w-20 h-1 bg-hkbp-gold mx-auto mt-3 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1: Ibadah Pagi -->
+                    <div class="border border-gray-100 rounded-2xl p-6 bg-slate-50 hover:shadow-xl transition duration-300 border-l-4 border-l-hkbp-navy">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-blue-100 text-hkbp-navy rounded-xl"><i class="fas fa-sun text-xl"></i></span>
+                            <span class="text-xs font-bold uppercase bg-blue-50 text-hkbp-navy px-2.5 py-1 rounded-full">Bahasa Batak</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-hkbp-navy mb-2">Ibadah Minggu Pagi (Pukul 10.00 WIB)</h3>
+                        <p class="text-sm text-gray-600 mb-4">Ibadah Bahasa Batak umum dengan tata ibadah (Avondmaal/Agenda HKBP).</p>
+                        <ul class="text-xs text-gray-500 space-y-1">
+                            <li><i class="fas fa-clock mr-2 text-hkbp-gold"></i>10.00 - 11.30 WIB</li>
+                            <li><i class="fas fa-map-marker-alt mr-2 text-hkbp-gold"></i>Gereja Utama</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: Sekolah Minggu -->
+                    <div class="border border-gray-100 rounded-2xl p-6 bg-slate-50 hover:shadow-xl transition duration-300 border-l-4 border-l-hkbp-gold">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-amber-100 text-amber-800 rounded-xl"><i class="fas fa-child text-xl"></i></span>
+                            <span class="text-xs font-bold uppercase bg-amber-50 text-amber-800 px-2.5 py-1 rounded-full">Sekolah Minggu</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-hkbp-navy mb-2">Ibadah Sikola Minggu (SKM)</h3>
+                        <p class="text-sm text-gray-600 mb-4">Pelayanan anak-anak usia TK hingga SD dengan puji-pujian dan cerita Alkitab.</p>
+                        <ul class="text-xs text-gray-500 space-y-1">
+                            <li><i class="fas fa-clock mr-2 text-hkbp-gold"></i>007.30 - 09.00 WIB</li>
+                            <li><i class="fas fa-map-marker-alt mr-2 text-hkbp-gold"></i>Gereja Utama</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3: Ibadah Siang Bahasa Indonesia -->
+                    <div class="border border-gray-100 rounded-2xl p-6 bg-slate-50 hover:shadow-xl transition duration-300 border-l-4 border-l-hkbp-navy">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-indigo-100 text-indigo-800 rounded-xl"><i class="fas fa-users text-xl"></i></span>
+                            <span class="text-xs font-bold uppercase bg-indigo-50 text-indigo-800 px-2.5 py-1 rounded-full">Bahasa Indonesia</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-hkbp-navy mb-2">Ibadah Siang Umum & Remaja</h3>
+                        <p class="text-sm text-gray-600 mb-4">Ibadah umum menggunakan Bahasa Indonesia.</p>
+                        <ul class="text-xs text-gray-500 space-y-1">
+                            <li><i class="fas fa-clock mr-2 text-hkbp-gold"></i>10.00 - 11.30 WIB (Setiap Awal BUlan)</li>
+                            <li><i class="fas fa-map-marker-alt mr-2 text-hkbp-gold"></i>Gereja Utama</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 4: Naposobulung (NHKBP) -->
+                    <div class="border border-gray-100 rounded-2xl p-6 bg-slate-50 hover:shadow-xl transition duration-300 border-l-4 border-l-purple-600">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-purple-100 text-purple-800 rounded-xl"><i class="fas fa-guitar text-xl"></i></span>
+                            <span class="text-xs font-bold uppercase bg-purple-50 text-purple-800 px-2.5 py-1 rounded-full">NHKBP / Pemuda</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-hkbp-navy mb-2">Ibadah Pemuda / Naposobulung</h3>
+                        <p class="text-sm text-gray-600 mb-4">Wadah pemuda-pemudi HKBP bersekutu, bernyanyi, dan mendalami firman Tuhan.</p>
+                        <ul class="text-xs text-gray-500 space-y-1">
+                            <li><i class="fas fa-clock mr-2 text-hkbp-gold"></i>Jumat, 19.30 WIB</li>
+                            <li><i class="fas fa-map-marker-alt mr-2 text-hkbp-gold"></i>Gedung Gereja Utama</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 5: Ina Kamis -->
+                    <div class="border border-gray-100 rounded-2xl p-6 bg-slate-50 hover:shadow-xl transition duration-300 border-l-4 border-l-teal-600">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-teal-100 text-teal-800 rounded-xl"><i class="fas fa-heart text-xl"></i></span>
+                            <span class="text-xs font-bold uppercase bg-teal-50 text-teal-800 px-2.5 py-1 rounded-full">Kategori Orangtua</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-hkbp-navy mb-2">Seksi Parompuan</h3>
+                        <p class="text-sm text-gray-600 mb-4">PA Ibu (Parompuan) serta Latihan Koor Rutin setiap minggu.</p>
+                        <ul class="text-xs text-gray-500 space-y-1">
+                            <li><i class="fas fa-clock mr-2 text-hkbp-gold"></i>Kamis, 19.00 WIB</li>
+                            <li><i class="fas fa-map-marker-alt mr-2 text-hkbp-gold"></i>Gereja Utama</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 6: Ina Estomihi -->
+                    <div class="border border-gray-100 rounded-2xl p-6 bg-slate-50 hover:shadow-xl transition duration-300 border-l-4 border-l-rose-600">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-rose-100 text-rose-800 rounded-xl"><i class="fas fa-hands-helping text-xl"></i></span>
+                            <span class="text-xs font-bold uppercase bg-rose-50 text-rose-800 px-2.5 py-1 rounded-full">Lansia</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-hkbp-navy mb-2">PA & Persekutuan Lansia serta latihan koor setiap minggu</h3>
+                        <p class="text-sm text-gray-600 mb-4">Ibadah kaum ibu lanjut usia.</p>
+                        <ul class="text-xs text-gray-500 space-y-1">
+                            <li><i class="fas fa-clock mr-2 text-hkbp-gold"></i>Sabtu Pertama, 10.00 WIB</li>
+                            <li><i class="fas fa-map-marker-alt mr-2 text-hkbp-gold"></i>Sopo Godang</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Berita & Warta Gereja -->
+        <div class="py-16 bg-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-hkbp-gold mb-1">Informasi Terkini</h2>
+                        <p class="text-3xl font-bold font-serif text-hkbp-navy">Warta & Berita Huria</p>
+                    </div>
+                    <a href="#" class="text-hkbp-navy font-semibold hover:text-hkbp-gold transition text-sm mt-4 md:mt-0 flex items-center">
+                        Lihat Semua Warta <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- News Item 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1511649475669-e288648b2339?auto=format&fit=crop&w=600&q=80" alt="Warta 1" class="h-48 w-full object-cover" onerror="this.src='https://placehold.co/600x400/0f2b5c/ffffff?text=Warta+HKBP'">
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-semibold text-hkbp-gold">24 Oktober 2026</span>
+                                <h3 class="text-lg font-bold text-hkbp-navy mt-1 mb-2 hover:text-blue-700 cursor-pointer">Pesta Gotilon & Syukuran Pesta Panen Tahun 2026</h3>
+                                <p class="text-sm text-gray-600 line-clamp-3">Pelaksanaan Pesta Gotilon Resort akan dilaksanakan dengan meriah disertai lelang makanan khas Batak dan ucapan syukur.</p>
+                            </div>
+                            <a href="#" class="inline-block mt-4 text-xs font-bold text-hkbp-navy uppercase tracking-wider hover:text-hkbp-gold">Baca Selengkapnya &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- News Item 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=600&q=80" alt="Warta 2" class="h-48 w-full object-cover" onerror="this.src='https://placehold.co/600x400/0f2b5c/ffffff?text=Penumpangan+Tangan'">
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-semibold text-hkbp-gold">18 Oktober 2026</span>
+                                <h3 class="text-lg font-bold text-hkbp-navy mt-1 mb-2 hover:text-blue-700 cursor-pointer">Pendaftaran Calon Naik Sidi (Parguru Malua) Periode 2026/2027</h3>
+                                <p class="text-sm text-gray-600 line-clamp-3">Diberitahukan kepada seluruh jemaat yang memiliki putra/putri berusia minimal 15 tahun untuk mendaftarkan diri dalam Penelaahan Sidi.</p>
+                            </div>
+                            <a href="#" class="inline-block mt-4 text-xs font-bold text-hkbp-navy uppercase tracking-wider hover:text-hkbp-gold">Baca Selengkapnya &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- News Item 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=600&q=80" alt="Warta 3" class="h-48 w-full object-cover" onerror="this.src='https://placehold.co/600x400/0f2b5c/ffffff?text=Kegiatan+Sosial'">
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-semibold text-hkbp-gold">10 Oktober 2026</span>
+                                <h3 class="text-lg font-bold text-hkbp-navy mt-1 mb-2 hover:text-blue-700 cursor-pointer">Aksi Sosial Kasih Diakonia: Donor Darah & Pengobatan Gratis</h3>
+                                <p class="text-sm text-gray-600 line-clamp-3">Seksi Diakonia Social menyelenggarakan kegiatan pengobatan gratis dan donor darah bekerja sama dengan PMI kota.</p>
+                            </div>
+                            <a href="#" class="inline-block mt-4 text-xs font-bold text-hkbp-navy uppercase tracking-wider hover:text-hkbp-gold">Baca Selengkapnya &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PROFIL GEREJA -->
+    <section id="profil" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-hkbp-gold mb-1">Mengenal Huria Kita</h2>
+                <p class="text-3xl font-bold font-serif text-hkbp-navy">Profil HKBP</p>
+                <div class="w-20 h-1 bg-hkbp-gold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold text-hkbp-navy font-serif">Sejarah Singkat HKBP</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        Huria Kristen Batak Protestan (HKBP) adalah gereja Protestan di antara orang Batak, umumnya Batak Toba. Gereja ini merupakan yang terbesar di antara Gereja-gereja Protestan yang ada di Indonesia dan Asia Tenggara.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        Tumbuh dari hasil perintisan para misionaris RMG (Rheinische Missionsgesellschaft) dari Jerman, khususnya **Dr. I.L. Nommensen** (Epphrus HKBP Pertama) pada tanggal **7 Oktober 1861**. HKBP terus berkembang menjadi lembaga keagamaan yang membawa terang Injil dan kemajuan pendidikan serta sosial di tanah Batak dan seluruh pelosok dunia.
+                    </p>
+                    <div class="pt-2">
+                        <div class="border-l-4 border-hkbp-gold pl-4 py-2 bg-yellow-50/50 rounded-r-lg">
+                            <p class="text-sm font-semibold text-hkbp-navy italic">
+                                "Hamuna do bontar ni portibi on. Ndang tarbahen tabuni huta na di ginjang ni dolok." (Matius 5:14)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="" alt="Gereja HKBP Historic" class="rounded-2xl shadow-xl w-full object-cover h-96" onerror="this.src='https://placehold.co/800x600/0f2b5c/ffffff?text=Gereja+HKBP'">
+                    <div class="absolute -bottom-6 -left-6 bg-hkbp-navy text-white p-6 rounded-2xl shadow-lg max-w-xs hidden sm:block border border-hkbp-gold/30">
+                        <span class="block text-3xl font-bold text-hkbp-gold">160+</span>
+                        <span class="text-xs text-gray-300 uppercase tracking-wider">Tahun Melayani dalam Kasih Kristus</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visi, Misi & Confessio -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Visi -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-hkbp-navy text-hkbp-gold rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-hkbp-navy mb-3">Visi HKBP</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Menjadi Gereja yang inklusif, dialogis, dan transformatif serta menjadi berkat bagi dunia (Inclusif, Dialogical, Transformative).
+                    </p>
+                </div>
+
+                <!-- Misi -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-hkbp-navy text-hkbp-gold rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-hkbp-navy mb-3">Misi HKBP</h4>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Meningkatkan persekutuan, kesaksian, dan pelayanan kasih.</li>
+                        <li>Meningkatkan kualitas SDM dan kualitas hidup jemaat.</li>
+                        <li>Memperjuangkan keadilan, perdamaian, dan keutuhan ciptaan.</li>
+                    </ul>
+                </div>
+
+                <!-- Nilai & Konfesi -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-hkbp-navy text-hkbp-gold rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-book-bible"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-hkbp-navy mb-3">Pengakuan Iman</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Memegang teguh Confessio HKBP, Pengakuan Iman Rasuli, Sertamerta ajaran Alkitab Perjanjian Lama dan Perjanjian Baru sebagai Firman Allah yang hidup.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PIMPINAN & PELAYAN TAHBISAN -->
+    <section id="pimpinan" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-hkbp-gold mb-1">Pelayan Tahbisan</h2>
+                <p class="text-3xl font-bold font-serif text-hkbp-navy">Pimpinan & Fulltimer Gereja</p>
+                <div class="w-20 h-1 bg-hkbp-gold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Pimpinan 1: Pendeta Resort -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition duration-300">
+                    <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&q=80" alt="Pendeta Resort" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x500/0f2b5c/ffffff?text=Pendeta+Resort'">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-hkbp-navy to-transparent h-20"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <span class="text-xs font-bold text-hkbp-gold uppercase tracking-wider block mb-1">Pendeta HKBP Resort</span>
+                        <h3 class="text-lg font-bold text-hkbp-navy">Pdt. Tunggul Simanjuntak, S.Th</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Pimpinan Resort</p>
+                        <div class="flex justify-center space-x-3 text-gray-400">
+                            <a href="#" class="hover:text-hkbp-navy"><i class="fas fa-envelope"></i></a>
+                            <a href="#" class="hover:text-hkbp-navy"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pimpinan 2: Pimpinan Jemaat -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition duration-300">
+                    <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Pendeta Fungsional" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x500/0f2b5c/ffffff?text=Pendeta+Fungsional'">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-hkbp-navy to-transparent h-20"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <span class="text-xs font-bold text-hkbp-gold uppercase tracking-wider block mb-1">Pimpinan Jemaat</span>
+                        <h3 class="text-lg font-bold text-hkbp-navy">Biv. Desven Br.Panjaitan</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Pelayanan Pimpinan Jemaat</p>
+                        <div class="flex justify-center space-x-3 text-gray-400">
+                            <a href="#" class="hover:text-hkbp-navy"><i class="fas fa-envelope"></i></a>
+                            <a href="#" class="hover:text-hkbp-navy"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pimpinan 3: Guru Huria -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition duration-300">
+                    <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" alt="Guru Huria" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x500/0f2b5c/ffffff?text=Guru+Huria'">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-hkbp-navy to-transparent h-20"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <span class="text-xs font-bold text-hkbp-gold uppercase tracking-wider block mb-1">Parartaon Huria</span>
+                        <h3 class="text-lg font-bold text-hkbp-navy">St. R. Hutahaean</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Inventaris Huria</p>
+                        <div class="flex justify-center space-x-3 text-gray-400">
+                            <a href="#" class="hover:text-hkbp-navy"><i class="fas fa-envelope"></i></a>
+                            <a href="#" class="hover:text-hkbp-navy"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pimpinan 4: Bibelvrouw / Diakones -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition duration-300">
+                    <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Bibelvrouw" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x500/0f2b5c/ffffff?text=Bibelvrouw'">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-hkbp-navy to-transparent h-20"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <span class="text-xs font-bold text-hkbp-gold uppercase tracking-wider block mb-1">Bendahara Huria</span>
+                        <h3 class="text-lg font-bold text-hkbp-navy">St. R. BR. Simamora</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Bendahara Huria</p>
+                        <div class="flex justify-center space-x-3 text-gray-400">
+                            <a href="#" class="hover:text-hkbp-navy"><i class="fas fa-envelope"></i></a>
+                            <a href="#" class="hover:text-hkbp-navy"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: STRUKTUR ORGANISASI & SEKSI-SEKSI -->
+    <section id="struktur" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-hkbp-gold mb-1">Kepengurusan Huria</h2>
+                <p class="text-3xl font-bold font-serif text-hkbp-navy">Struktur Organisasi Sintua & Seksi</p>
+                <div class="w-20 h-1 bg-hkbp-gold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Visual Flowchart Simplifikasi -->
+            <div class="mb-12 p-8 bg-slate-50 rounded-2xl border border-gray-200">
+                <div class="text-center font-bold text-xl text-hkbp-navy mb-6">Dewan-Dewan & Seksi Pelayanan</div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <!-- Dewan Koinonia -->
+                    <div class="bg-white p-6 rounded-xl border border-blue-200 shadow-sm">
+                        <div class="w-10 h-10 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">1</div>
+                        <h4 class="font-bold text-hkbp-navy text-lg mb-2">Dewan Koinonia</h4>
+                        <p class="text-xs text-gray-500 mb-4">Ketua: St. S. Br.Ompusunggu</p>
+                        <div class="flex flex-wrap gap-2 justify-center text-xs">
+                            <span class="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md">Seksi Sekolah Minggu</span>
+                            <span class="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md">Seksi Remaja/Naposo</span>
+                            <span class="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md">Seksi Parompuan</span>
+                            <span class="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md">Seksi Ama</span>
+                            <span class="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md">Seksi Lansia</span>
+                        </div>
+                    </div>
+
+                    <!-- Dewan Marturia -->
+                    <div class="bg-white p-6 rounded-xl border border-amber-200 shadow-sm">
+                        <div class="w-10 h-10 bg-amber-100 text-amber-800 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">2</div>
+                        <h4 class="font-bold text-hkbp-navy text-lg mb-2">Dewan Marturia</h4>
+                        <p class="text-xs text-gray-500 mb-4">Ketua: St. R. Situmorang</p>
+                        <div class="flex flex-wrap gap-2 justify-center text-xs">
+                            <span class="bg-amber-50 text-amber-800 px-2.5 py-1 rounded-md">Seksi Zending/Pekabaran</span>
+                            <span class="bg-amber-50 text-amber-800 px-2.5 py-1 rounded-md">Seksi Musik & Musik Gereja</span>
+                            <span class="bg-amber-50 text-amber-800 px-2.5 py-1 rounded-md">Seksi Penyiaran / Humas</span>
+                        </div>
+                    </div>
+
+                    <!-- Dewan Diakonia -->
+                    <div class="bg-white p-6 rounded-xl border border-emerald-200 shadow-sm">
+                        <div class="w-10 h-10 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">3</div>
+                        <h4 class="font-bold text-hkbp-navy text-lg mb-2">Dewan Diakonia</h4>
+                        <p class="text-xs text-gray-500 mb-4">Ketua: St. A. Sibarani</p>
+                        <div class="flex flex-wrap gap-2 justify-center text-xs">
+                            <span class="bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md">Seksi Sosial/Diakonei</span>
+                            <span class="bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md">Seksi Pendidikan</span>
+                            <span class="bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md">Seksi Kemasyarakatan</span>
+                            <span class="bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md">Seksi Health/Kesehatan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tim Parartaon & Keuangan -->
+                <div class="mt-6 bg-hkbp-navy text-white p-6 rounded-xl flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-coins text-hkbp-gold text-2xl"></i>
+                        <div>
+                            <p class="font-bold text-sm">Badan Pengelola Keuangan & Parartaon</p>
+                            <p class="text-xs text-gray-300">Bendahara Huria: St. R. Br. Simamora | Sekretaris Huria: St. R. Hutahaean</p>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-hkbp-gold text-hkbp-navy font-bold px-3 py-1.5 rounded-lg uppercase">Parartaon HKBP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: DATA JEMAAT & SEKTOR -->
+    <section id="jemaat" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-hkbp-gold mb-1">Statistik & Kosektoran</h2>
+                <p class="text-3xl font-bold font-serif text-hkbp-navy">Data Jemaat Huria</p>
+                <div class="w-20 h-1 bg-hkbp-gold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-hkbp-navy mb-1">4</div>
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wider">Wijk / Sektor</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-hkbp-navy mb-1">127</div>
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wider">Kepala Keluarga (KK)</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-hkbp-navy mb-1">321+</div>
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wider">Total Jiwa</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-hkbp-gold mb-1">9</div>
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wider">Sintua Aktif</div>
+                </div>
+            </div>
+
+            <!-- Daftar Wijk / Sektor Table -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200">
+                <div class="p-6 bg-hkbp-navy text-white flex justify-between items-center">
+                    <h3 class="font-bold text-lg font-serif">Daftar Wijk & Sintua Sektor</h3>
+                    <span class="text-xs bg-hkbp-gold text-hkbp-navy px-2.5 py-1 rounded font-bold">Tahun 2026</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-gray-600">
+                        <thead class="bg-gray-100 text-xs font-semibold text-gray-700 uppercase tracking-wider border-b">
+                            <tr>
+                                <th class="p-4">Nama Wijk</th>
+                                <th class="p-4">Wilayah / Jalan</th>
+                                <th class="p-4">Sintua Wijk (Uluan Wijk)</th>
+                                <th class="p-4 text-center">Jumlah KK</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-bold text-hkbp-navy">Wijk I - Lingkungan 1</td>
+                                <td class="p-4">Parbibel - Jl. Gereja Bandar Buntu</td>
+                                <td class="p-4">St. R. Br. Gultom</td>
+                                <td class="p-4 text-center font-semibold">37 KK</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-bold text-hkbp-navy">Wijk II - Lingkungan 2</td>
+                                <td class="p-4">Jl. Gereja Bandar BUntu - Simp. Pajak Nagori</td>
+                                <td class="p-4">St. R. Situmorang - St. S. Br. Ompusunggu</td>
+                                <td class="p-4 text-center font-semibold">34 KK</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-bold text-hkbp-navy">Wijk III - Lingkungan 3</td>
+                                <td class="p-4">Jl. Simp. Pajak Nagori - Perdagangan</td>
+                                <td class="p-4">St. R. Hutahaean - St. A. Siahaan</td>
+                                <td class="p-4 text-center font-semibold">29 KK</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-bold text-hkbp-navy">Wijk IV - Lingkungan 4</td>
+                                <td class="p-4">Huta Bagasan - Huuta III Bandar Rakyat</td>
+                                <td class="p-4">St. A. Sibarani - St. R. Br.Simamora</td>
+                                <td class="p-4 text-center font-semibold">27 KK</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: PELAPORAN & LAYANAN JEMAAT INTERAKTIF -->
+    <section id="layanan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-hkbp-gold mb-1">Pelayanan Administrasi</h2>
+                <p class="text-3xl font-bold font-serif text-hkbp-navy">Pelaporan & Formulir Online</p>
+                <p class="text-sm text-gray-500 mt-2">Silakan isi formulir di bawah ini untuk pendaftaran sakramen, permohonan doa, atau pembaruan data jemaat.</p>
+                <div class="w-20 h-1 bg-hkbp-gold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Form Container -->
+                <div class="lg:col-span-8 bg-slate-50 p-6 sm:p-10 rounded-2xl border border-gray-200 shadow-md">
+                    
+                    <!-- Form Type Selector Tabs -->
+                    <div class="flex flex-wrap gap-2 mb-8 border-b border-gray-200 pb-4">
+                        <button type="button" onclick="switchForm('baptis')" id="tab-baptis" class="form-tab px-4 py-2 text-xs font-bold rounded-xl bg-hkbp-navy text-white transition">
+                            Baptis Kudus
+                        </button>
+                        <button type="button" onclick="switchForm('sidi')" id="tab-sidi" class="form-tab px-4 py-2 text-xs font-bold rounded-xl bg-gray-200 text-gray-700 hover:bg-gray-300 transition">
+                            Naik Sidi
+                        </button>
+                        <button type="button" onclick="switchForm('nikah')" id="tab-nikah" class="form-tab px-4 py-2 text-xs font-bold rounded-xl bg-gray-200 text-gray-700 hover:bg-gray-300 transition">
+                            Pamasu-masuon (Pernikahan)
+                        </button>
+                        <button type="button" onclick="switchForm('pindah')" id="tab-pindah" class="form-tab px-4 py-2 text-xs font-bold rounded-xl bg-gray-200 text-gray-700 hover:bg-gray-300 transition">
+                            Pindah / Data KK
+                        </button>
+                        <button type="button" onclick="switchForm('doa')" id="tab-doa" class="form-tab px-4 py-2 text-xs font-bold rounded-xl bg-gray-200 text-gray-700 hover:bg-gray-300 transition">
+                            Permohonan Doa / Besuk
+                        </button>
+                    </div>
+
+                    <!-- Interactive Form -->
+                    <form id="jemaatForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <input type="hidden" id="jenis_layanan" value="Baptis Kudus">
+
+                        <div id="form-title-display" class="font-bold text-hkbp-navy text-lg border-l-4 border-hkbp-gold pl-3">
+                            Pendaftaran Baptis Kudus (Tardidi)
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Nama Lengkap Pemohon / Anak</label>
+                                <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-hkbp-navy focus:outline-none text-sm" placeholder="Contoh: Samuel Hutapea">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">No. Registrasi KK Gereja / Wijk</label>
+                                <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-hkbp-navy focus:outline-none text-sm" placeholder="Wijk I / No KK">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Nama Orang Tua / Kepala Keluarga</label>
+                                <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-hkbp-navy focus:outline-none text-sm" placeholder="St. J. Hutapea / M. br. Simanjuntak">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Nomor WhatsApp / HP Active</label>
+                                <input type="tel" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-hkbp-navy focus:outline-none text-sm" placeholder="08123456789">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Tanggal Lahir / Tanggal Pelaksanaan Diharapkan</label>
+                            <input type="date" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-hkbp-navy focus:outline-none text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Catatan Tambahan / Keterangan</label>
+                            <textarea rows="3" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-hkbp-navy focus:outline-none text-sm" placeholder="Tuliskan keterangan tambahan jika ada..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 bg-hkbp-navy hover:bg-hkbp-navydark text-white font-bold rounded-xl shadow-lg transition duration-200 text-sm flex items-center justify-center space-x-2">
+                            <i class="fas fa-paper-plane text-hkbp-gold"></i>
+                            <span>Kirim Laporan & Permohonan</span>
+                        </button>
+                    </form>
+
+                    <!-- Alert Box Notification (Hidden by default) -->
+                    <div id="alert-box" class="hidden mt-4 p-4 rounded-xl bg-green-100 border border-green-300 text-green-800 text-sm flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-xl text-green-600"></i>
+                        <div>
+                            <span class="font-bold">Berhasil Terkirim!</span> Data pelaporan Anda telah tersimpan dan Sekretariat Huria akan menghubungi Anda melalui WhatsApp/Telepon.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Sekretariat Card -->
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="bg-hkbp-navy text-white p-6 rounded-2xl shadow-lg border border-hkbp-gold/30">
+                        <h3 class="text-lg font-bold font-serif text-hkbp-gold mb-4 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i> Jam Operasional Sekretariat
+                        </h3>
+                        <p class="text-xs text-gray-300 mb-4 leading-relaxed">
+                            Pelayanan administrasi surat-menyurat, pendaftaran sakramen, dan legalisasi berkas jemaat melayani pada jam kerja berikut:
+                        </p>
+                        <ul class="text-xs space-y-2 text-gray-200">
+                            <li class="flex justify-between border-b border-white/10 pb-1">
+                                <span>Selasa - Sabtu:</span>
+                                <span class="font-semibold text-hkbp-gold">09.00 - 16.00 WIB</span>
+                            </li>
+                            <li class="flex justify-between border-b border-white/10 pb-1">
+                                <span>Minggu:</span>
+                                <span class="font-semibold text-hkbp-gold">Setelah Ibadah selesai</span>
+                            </li>
+                            <li class="flex justify-between text-red-300">
+                                <span>Senin:</span>
+                                <span class="font-semibold">Libur Pelayanan</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-amber-50 border border-amber-200 p-6 rounded-2xl">
+                        <h4 class="font-bold text-amber-900 text-sm mb-2"><i class="fas fa-exclamation-triangle text-amber-600 mr-2"></i>Persyaratan Administrasi</h4>
+                        <p class="text-xs text-amber-800 leading-relaxed">
+                            Untuk pendaftaran Baptis, Sidi, dan Pernikahan, mohon melampirkan fotokopi **Kartu Keluarga Gereja (KSP)** dan mengonfirmasi dengan **Sintua Wijk** masing-masing sebelum memproses berkas di sekretariat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: KONTAK, QRIS & FOOTER -->
+    <footer id="kontak" class="bg-hkbp-navydark text-white pt-16 pb-8 border-t-4 border-hkbp-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Col 1: Brand & About -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-white p-1 flex items-center justify-center">
+                            <svg viewBox="0 0 100 100" class="w-full h-full">
+                                <circle cx="50" cy="50" r="48" fill="#0f2b5c" stroke="#d4af37" stroke-width="3"/>
+                                <rect x="45" y="15" width="10" height="60" fill="#ffffff" />
+                                <rect x="25" y="30" width="50" height="10" fill="#ffffff" />
+                            </svg>
+                        </div>
+                        <span class="text-lg font-bold font-serif tracking-tight">HKBP RESORT KOTA</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Gereja Huria Kristen Batak Protestan melayani Tuhan dan jemaat dalam persekutuan, kesaksian, dan pelayanan kasih secara holistik.
+                    </p>
+                    <div class="flex space-x-3 text-lg text-hkbp-gold">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-hkbp-gold hover:text-hkbp-navy transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-hkbp-gold hover:text-hkbp-navy transition"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-hkbp-gold hover:text-hkbp-navy transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-hkbp-gold uppercase tracking-wider mb-4 border-b border-gray-700 pb-2">Tautan Cepat</h4>
+                    <ul class="text-xs space-y-2 text-gray-300">
+                        <li><a href="#beranda" class="hover:text-hkbp-gold transition">Jadwal Ibadah Minggu</a></li>
+                        <li><a href="#profil" class="hover:text-hkbp-gold transition">Visi Misi & Sejarah</a></li>
+                        <li><a href="#pimpinan" class="hover:text-hkbp-gold transition">Pelayan Tahbisan</a></li>
+                        <li><a href="#layanan" class="hover:text-hkbp-gold transition">Form Pendaftaran Baptis & Sidi</a></li>
+                        <li><a href="#jemaat" class="hover:text-hkbp-gold transition">Data Sektor / Wijk</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: QRIS & Rekening Persembahan -->
+                <div>
+                    <h4 class="text-sm font-bold text-hkbp-gold uppercase tracking-wider mb-4 border-b border-gray-700 pb-2">Persembahan / Pelean</h4>
+                    <p class="text-xs text-gray-300 mb-3">Transfer Persembahan Kas, Diakonia, & Pembangunan:</p>
+                    <div class="bg-white p-3 rounded-xl inline-block text-gray-800 text-center mb-2">
+                        <!-- QRIS Placeholders -->
+                        <div class="w-28 h-28 bg-gray-200 border-2 border-dashed border-gray-400 flex items-center justify-center text-xs font-bold text-gray-500 mx-auto mb-1">
+                            QRIS HKBP
+                        </div>
+                        <span class="text-[10px] font-bold block text-hkbp-navy">Scan QRIS All Payment</span>
+                    </div>
+                    <div class="text-[11px] text-gray-300 space-y-1">
+                        <p><strong class="text-white">Bank Mandiri:</strong> 105-00-1234567-8</p>
+                        <p><strong class="text-white">Bank BRI:</strong> 0012-01-000123-50-4</p>
+                        <p class="text-[10px] text-gray-400">a.n. HKBP Resort Kota</p>
+                    </div>
+                </div>
+
+                <!-- Col 4: Alamat & Kontak -->
+                <div>
+                    <h4 class="text-sm font-bold text-hkbp-gold uppercase tracking-wider mb-4 border-b border-gray-700 pb-2">Kontak Gereja</h4>
+                    <ul class="text-xs space-y-3 text-gray-300">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt text-hkbp-gold mt-0.5"></i>
+                            <span>Jl. Gereja No. 123, Kel. Teladan, Kota Medan, Sumatera Utara 20217</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone-alt text-hkbp-gold"></i>
+                            <span>Sekretariat: (061) 1234567</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fab fa-whatsapp text-hkbp-gold"></i>
+                            <span>WhatsApp: 0812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-hkbp-gold"></i>
+                            <span>info@hkbpresortkota.or.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 text-center text-xs text-gray-400">
+                <p>&copy; 2026 HKBP Resort Kota. All Rights Reserved. Soli Deo Gloria.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // Toggle Navigation Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Switch Forms for Layanan Jemaat
+        function switchForm(type) {
+            const tabs = document.querySelectorAll('.form-tab');
+            const titleDisplay = document.getElementById('form-title-display');
+            const jenisInput = document.getElementById('jenis_layanan');
+
+            // Reset tab styles
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-hkbp-navy', 'text-white');
+                tab.classList.add('bg-gray-200', 'text-gray-700');
+            });
+
+            // Set active tab style & form info
+            if (type === 'baptis') {
+                document.getElementById('tab-baptis').classList.add('bg-hkbp-navy', 'text-white');
+                titleDisplay.innerText = "Pendaftaran Baptis Kudus (Tardidi)";
+                jenisInput.value = "Baptis Kudus";
+            } else if (type === 'sidi') {
+                document.getElementById('tab-sidi').classList.add('bg-hkbp-navy', 'text-white');
+                titleDisplay.innerText = "Pendaftaran Naik Sidi (Parguru Malua)";
+                jenisInput.value = "Naik Sidi";
+            } else if (type === 'nikah') {
+                document.getElementById('tab-nikah').classList.add('bg-hkbp-navy', 'text-white');
+                titleDisplay.innerText = "Pendaftaran Pamasu-masuon (Pernikahan Gereja)";
+                jenisInput.value = "Pernikahan";
+            } else if (type === 'pindah') {
+                document.getElementById('tab-pindah').classList.add('bg-hkbp-navy', 'text-white');
+                titleDisplay.innerText = "Pelaporan Pindah Jemaat / Perubahan Kartu Keluarga";
+                jenisInput.value = "Pindah/Data KK";
+            } else if (type === 'doa') {
+                document.getElementById('tab-doa').classList.add('bg-hkbp-navy', 'text-white');
+                titleDisplay.innerText = "Permohonan Doa / Besuk Jemaat Sakit";
+                jenisInput.value = "Permohonan Doa";
+            }
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('alert-box');
+            
+            // Show Alert Notification
+            alertBox.classList.remove('hidden');
+            
+            // Reset form input
+            document.getElementById('jemaatForm').reset();
+
+            // Auto hide notification after 6 seconds
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
